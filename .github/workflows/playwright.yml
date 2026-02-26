@@ -5,11 +5,11 @@ on:
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
-    inputs:
-      name:
-        description: 'Run tests manually'
-        required: true
-        default: 'main'
+    # inputs:
+    #   name:
+    #     description: 'Run tests manually'
+    #     required: true
+    #     default: 'main'
 jobs:
   udemy_test:
     timeout-minutes: 60
