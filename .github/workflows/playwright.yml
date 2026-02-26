@@ -10,13 +10,8 @@ on:
         description: 'Run tests manually'
         required: true
         default: 'main'
-        type: choice
-        options:
-        - nightly
-        - special
-        - allExports
 jobs:
-  test:
+  udemy_test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
