@@ -26,6 +26,7 @@ export class RegistrationPage {
   readonly streetInput: Locator;
   readonly zipCodeInput: Locator;
   readonly confirmRegisterButton: Locator;
+  readonly errorMessage: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -40,6 +41,7 @@ export class RegistrationPage {
     this.streetInput = page.locator('[id="register-street"]');
     this.zipCodeInput = page.locator('[id="register-zip"]');
     this.confirmRegisterButton = page.locator('[id="register-button"]');
+    this.errorMessage = page.locator('[id="register-error"]');
 
   }
   
