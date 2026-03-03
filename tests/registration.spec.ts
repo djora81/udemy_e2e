@@ -4,14 +4,14 @@ import { RegistrationPage } from './pages/registration.page';
 test('fill registration form for Ukraine', async ({ page }) => {
   const registrationPage = new RegistrationPage(page);
   const registrationData = {
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john.doe@example.com',
+    firstName: 'Vasyl',
+    lastName: 'Petrenko',
+    email: 'vasyl.petrenko@example.com',
     password: 'Password123!',
-    city: 'New York',
+    city: 'Lviv',
     country: 'Ukraine',
     phone: '+380123456789',
-    street: '123 Main Street',
+    street: 'Stryiska Street, 10',
     zipCode: '10001'
   };
 
