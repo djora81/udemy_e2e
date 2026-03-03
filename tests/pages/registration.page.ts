@@ -45,7 +45,6 @@ export class RegistrationPage {
 
   }
   
-
   async navigate() {
     await this.page.goto('/login');
   }
@@ -63,5 +62,42 @@ export class RegistrationPage {
     await this.streetInput.fill(data.street);
     await this.zipCodeInput.fill(data.zipCode);
     await this.confirmRegisterButton.click();
+  }
+}
+
+export class RegistrationBuilder {
+  private data: RegistrationData;
+
+  constructor() {
+    this.data = {
+      firstName: 'Ivan',
+      lastName: 'Builder',
+      email: 'ivan@example.com',
+      password: 'Password123!',
+      city: 'New York',
+      country: 'Ukraine',
+      phone: '123-456-7890',
+      street: '123 Main Street',
+      zipCode: '10001',
+    };
+  }
+
+  withEmail(email: string = this.data.email) {
+    this.data.email = email;
+    return this;
+  }
+
+  withCountry(country: string) {
+    this.data.country = country;
+    return this;
+  }
+
+  withInvalidPassword(password: string = '123') {
+    this.data.password = password;
+    return this;
+  }
+
+  build(): RegistrationData {
+    return this.data;
   }
 }
