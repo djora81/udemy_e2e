@@ -98,6 +98,6 @@ export class RegistrationBuilder {
   }
 
   build(): RegistrationData {
-    return this.data;
+    return {...this.data};
   }
 }

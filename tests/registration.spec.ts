@@ -60,4 +60,5 @@ test('test registration builder', async ({ page }) => {
   const user = new RegistrationBuilder().withEmail(registrationData.email).build();
 
   await registrationPage.fillRegistrationForm(user);
+  await expect(registrationPage.errorMessage).toBeVisible();
 });
