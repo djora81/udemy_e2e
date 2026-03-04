@@ -18,18 +18,18 @@ export class RegistrationPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.loginRegisterButton = page.locator('[id="login-register-button"]');
-    this.firstNameInput = page.locator('[id="register-first-name"]');
-    this.lastNameInput = page.locator('[id="register-last-name"]');
-    this.emailInput = page.locator('[id="register-email"]');
-    this.passwordInput = page.locator('[id="register-password"]');
-    this.cityInput = page.locator('[id="register-city"]');
-    this.countryDropdown = page.locator('[id="register-country"]');
-    this.phoneInput = page.locator('[id="register-phone"]');
-    this.streetInput = page.locator('[id="register-street"]');
-    this.zipCodeInput = page.locator('[id="register-zip"]');
-    this.confirmRegisterButton = page.locator('[id="register-button"]');
-    this.errorMessage = page.locator('[id="register-error"]');
+    this.loginRegisterButton = page.locator('#login-register-button');
+    this.firstNameInput = page.locator('#register-first-name');
+    this.lastNameInput = page.locator('#register-last-name');
+    this.emailInput = page.locator('#register-email');
+    this.passwordInput = page.locator('#register-password');
+    this.cityInput = page.locator('#register-city');
+    this.countryDropdown = page.locator('#register-country');
+    this.phoneInput = page.locator('#register-phone');
+    this.streetInput = page.locator('#register-street');
+    this.zipCodeInput = page.locator('#register-zip');
+    this.confirmRegisterButton = page.locator('#register-button');
+    this.errorMessage = page.locator('#register-error');
 
   }
   
