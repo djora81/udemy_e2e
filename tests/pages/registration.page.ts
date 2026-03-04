@@ -55,6 +55,5 @@ export class RegistrationPage {
     await this.streetInput.fill(data.street);
     await this.zipCodeInput.fill(data.zipCode);
     await this.confirmRegisterButton.click();
-    await expect(this.successMessage).toBeVisible();
   }
 }

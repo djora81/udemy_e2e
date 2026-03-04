@@ -21,6 +21,7 @@ test('Log in with created user', async ({ page }) => {
   await registrationPage.openRegistrationForm();
   await registrationPage.fillRegistrationForm(user);
   await expect(registrationPage.errorMessage).not.toBeVisible();
+  await expect(registrationPage.successMessage).toBeVisible();
   await loginPage.login(email, registrationBuilder.build().password);
   await expect(catalogPage.catalogTitle).toBeVisible();
   await expect(catalogPage.catalogTitle).toHaveText(catalogTitleText);
