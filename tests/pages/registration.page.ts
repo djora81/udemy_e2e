@@ -1,4 +1,4 @@
-import type { Page, Locator } from '@playwright/test';
+import { type Page, type Locator, expect } from '@playwright/test';
 import { RegistrationData } from '../types/registration.types';
 
 export class RegistrationPage {
@@ -14,6 +14,7 @@ export class RegistrationPage {
   readonly streetInput: Locator;
   readonly zipCodeInput: Locator;
   readonly confirmRegisterButton: Locator;
+  readonly successMessage: Locator;
   readonly errorMessage: Locator;
 
   constructor(page: Page) {
@@ -29,6 +30,7 @@ export class RegistrationPage {
     this.streetInput = page.locator('#register-street');
     this.zipCodeInput = page.locator('#register-zip');
     this.confirmRegisterButton = page.locator('#register-button');
+    this.successMessage = page.locator('#register-success');
     this.errorMessage = page.locator('#register-error');
 
   }
@@ -53,5 +55,6 @@ export class RegistrationPage {
     await this.streetInput.fill(data.street);
     await this.zipCodeInput.fill(data.zipCode);
     await this.confirmRegisterButton.click();
+    await expect(this.successMessage).toBeVisible();
   }
 }
