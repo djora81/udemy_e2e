@@ -21,6 +21,7 @@ test('Log in with created user', async ({ page }) => {
   await registrationPage.openRegistrationForm();
   await registrationPage.fillRegistrationForm(user);
   await expect(registrationPage.errorMessage).not.toBeVisible();
+  await expect(registrationPage.errorMessage).toBeVisible(); // failed step to check if the test fails when error message is visible
   await expect(registrationPage.successMessage).toBeVisible();
   await loginPage.login(email, registrationBuilder.build().password);
   await expect(catalogPage.catalogTitle).toBeVisible();
