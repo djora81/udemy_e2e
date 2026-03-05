@@ -26,3 +26,36 @@ test('Log in with created user', async ({ page }) => {
   await expect(catalogPage.catalogTitle).toBeVisible();
   await expect(catalogPage.catalogTitle).toHaveText(catalogTitleText);
 });
+
+test('Select product from catalog', async ({ page }) => {
+  const email = 'zuk@gmail.com';
+  const loginPage = new LoginPage(page);
+  const catalogPage = new CatalogPage(page);
+  const registrationPage = new RegistrationPage(page);
+  const registrationBuilder = new RegistrationBuilder();
+  const addToBasketText = 'Add to Basket';
+  const removeFromBasketText = 'Remove from Basket';
+
+  const user = new RegistrationBuilder()
+    .withEmail(email)
+    .withUkrainianPhone() // Ensure the phone number is valid for Ukraine
+    .build();
+  
+  await registrationPage.navigate();
+  await registrationPage.openRegistrationForm();
+  await registrationPage.fillRegistrationForm(user);
+  await expect(registrationPage.successMessage).toBeVisible();
+
+  await loginPage.login(email, registrationBuilder.build().password);
+  await expect(catalogPage.catalogTitle).toBeVisible();
+
+  await expect(catalogPage.walletProduct).toHaveText(addToBasketText);
+  await catalogPage.selectProduct('Wallet');
+  await expect(catalogPage.walletProduct).toHaveText(removeFromBasketText);
+  await expect(catalogPage.basketCount).toHaveText('1');
+  
+  await expect(catalogPage.tabletProduct).toHaveText(addToBasketText);
+  await catalogPage.selectProduct('Tablet');
+  await expect(catalogPage.tabletProduct).toHaveText(removeFromBasketText);
+  await expect(catalogPage.basketCount).toHaveText('2');
+});
