@@ -9,7 +9,7 @@ export class RegistrationBuilder {
       firstName: faker.person.firstName(),
       lastName: faker.person.lastName(),
       email: faker.internet.email().toLowerCase(),
-      password: 'Password123!',
+      password: process.env.TEST_PASSWORD!,
       city: faker.location.city(),
       country: 'Ukraine',
       phone: faker.phone.number({ style: 'international' }),
