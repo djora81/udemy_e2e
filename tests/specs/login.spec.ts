@@ -1,4 +1,3 @@
-import { log } from 'node:console';
 import { RegistrationBuilder } from '../builders/registration.builder';
 import { test, expect } from '../fixtures/registration.fixtures';
 import { BasketPage } from '../pages/basket.page';
