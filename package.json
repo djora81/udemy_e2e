@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Repository with some e2e Udemy tests",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test tests/specs/api.spec.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/djora81/udemy_e2e.git"
