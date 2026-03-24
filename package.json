@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:api": "playwright test tests/specs/api.spec.ts"
+    "test:api": "playwright test --project=api-tests"
   },
   "repository": {
     "type": "git",

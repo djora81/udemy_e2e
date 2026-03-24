@@ -39,6 +39,14 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
+    {
+      name: 'api-tests',
+      testMatch: 'specs/api.spec.ts',
+      use: {
+        baseURL: process.env.API_BASE_URL,
+      },
+    },
+
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
