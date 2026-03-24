@@ -8,8 +8,6 @@ import { RegistrationPage } from '../pages/registration.page';
 test.describe('API Tests', () => {
   test('GET placeholder api test', async ({ request }) => {
     const response = await request.get('/posts/1');
-    // const response = await request.get('https://jsonplaceholder.typicode.com/posts/1');
-    // const response = await request.get(`${process.env.API_BASE_URL}/posts/1`);
     expect(response.status()).toBe(200);
     const responseBody = await response.json();
     console.log(responseBody);
@@ -77,7 +75,6 @@ test.describe('API Tests', () => {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-    console.log(`${process.env.API_BASE_URL}/posts/1`),
     expect(response.status()).toBe(200);
     const responseBody = await response.json();
     console.log(responseBody);
@@ -85,6 +82,11 @@ test.describe('API Tests', () => {
     expect(responseBody).toHaveProperty('body', 'updated body');
     expect(responseBody).toHaveProperty('userId', 125);
     expect(responseBody).toHaveProperty('id', 1);
+  });
+
+  test('DELETE api test', async ({ request }) => {
+    const response = await request.delete('/posts/1');
+    expect(response.status()).toBe(200);
   });
 
 });

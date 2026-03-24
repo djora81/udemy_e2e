@@ -16,3 +16,14 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
+test('get started link is enabled', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+
+  // Click the get started link.
+  const getStartedLink = page.getByRole('link', { name: 'Get started' });
+
+  // Expects page to have a heading with the name of Installation.
+  await expect(getStartedLink).toBeVisible();
+  await expect(getStartedLink).toBeEnabled();
+});
