@@ -41,5 +41,28 @@ test.describe('API Tests', () => {
     expect(responseBody).toHaveProperty('author', 'John Doe');
   });
 
+  test('PUT api test', async ({ request }) => {
+    const response = await request.put('https://jsonplaceholder.typicode.com/posts/1', {
+      data: {
+        id: 1,
+        title: 'b ready crew',
+        body: 'cafe bar anna',
+        userId: 191
+      },
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+
+    });
+    expect(response.status()).toBe(200);
+    const responseBody = await response.json();
+    console.log(responseBody);
+    expect(responseBody).toHaveProperty('title', 'b ready crew');
+    expect(responseBody).toHaveProperty('body', 'cafe bar anna');
+    expect(responseBody).toHaveProperty('userId', 191);
+    expect(responseBody).toHaveProperty('id', 1);
+
+  });
+
 });
   
