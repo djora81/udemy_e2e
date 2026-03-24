@@ -7,7 +7,7 @@ import { RegistrationPage } from '../pages/registration.page';
 
 test.describe('API Tests', () => {
   test('GET placeholder api test', async ({ request }) => {
-    const response = await request.get('https://jsonplaceholder.typicode.com/posts/1');
+    const response = await request.get(`${process.env.API_BASE_URL}/posts/1`);
     expect(response.status()).toBe(200);
     const responseBody = await response.json();
     console.log(responseBody);
@@ -16,7 +16,7 @@ test.describe('API Tests', () => {
   });
 
   test('POST api test', async ({ request }) => {
-    const response = await request.post('https://jsonplaceholder.typicode.com/posts', {
+    const response = await request.post(`${process.env.API_BASE_URL}/posts`, {
       data: {
         title: 'b ready crew',
         body: 'cafe bar anna',
@@ -42,7 +42,7 @@ test.describe('API Tests', () => {
   });
 
   test('PUT api test', async ({ request }) => {
-    const response = await request.put('https://jsonplaceholder.typicode.com/posts/1', {
+    const response = await request.put(`${process.env.API_BASE_URL}/posts/1`, {
       data: {
         id: 1,
         title: 'b ready crew',
@@ -70,7 +70,7 @@ test.describe('API Tests', () => {
       body: 'updated body',
       userId: 125
     };
-    const response = await request.patch('https://jsonplaceholder.typicode.com/posts/1', {
+    const response = await request.patch(`${process.env.API_BASE_URL}/posts/1`, {
       data: updatedData,
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
@@ -84,6 +84,6 @@ test.describe('API Tests', () => {
     expect(responseBody).toHaveProperty('userId', 125);
     expect(responseBody).toHaveProperty('id', 1);
   });
-  
+
 });
   
