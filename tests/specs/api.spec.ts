@@ -6,7 +6,7 @@ import { LoginPage } from '../pages/login.page';
 import { RegistrationPage } from '../pages/registration.page';
 
 test.describe('API Tests', () => {
-  test.only('GET placeholder api test', async ({ request }) => {
+  test('GET placeholder api test', async ({ request }) => {
     const response = await request.get(`${process.env.API_BASE_URL}/posts/1`);
     expect(response.status()).toBe(200);
     const responseBody = await response.json();
