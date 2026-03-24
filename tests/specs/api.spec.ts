@@ -64,5 +64,26 @@ test.describe('API Tests', () => {
 
   });
 
+  test('PATCH api test', async ({ request }) => {
+    const updatedData = {
+      title: 'updated title',
+      body: 'updated body',
+      userId: 125
+    };
+    const response = await request.patch('https://jsonplaceholder.typicode.com/posts/1', {
+      data: updatedData,
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    expect(response.status()).toBe(200);
+    const responseBody = await response.json();
+    console.log(responseBody);
+    expect(responseBody).toHaveProperty('title', 'updated title');
+    expect(responseBody).toHaveProperty('body', 'updated body');
+    expect(responseBody).toHaveProperty('userId', 125);
+    expect(responseBody).toHaveProperty('id', 1);
+  });
+  
 });
   
