@@ -1,4 +1,4 @@
-import { faker, fakerDE, fakerUK } from '@faker-js/faker';
+import { faker, fakerUK } from '@faker-js/faker';
 import { RegistrationData } from '../types/registration.types';
 
 export class RegistrationBuilder {

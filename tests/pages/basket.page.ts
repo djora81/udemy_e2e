@@ -1,5 +1,4 @@
 import { type Page, type Locator, expect } from '@playwright/test';
-import { log } from 'node:console';
 
 export class BasketPage {
   readonly page: Page;
