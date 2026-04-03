@@ -1,7 +1,7 @@
 import { test as teardown } from '@playwright/test';
 import fs from 'fs';
 
-teardown('delete file', async ({ }) => {
+teardown('Global teardown - delete file', async ({ }) => {
   console.log('deleting test file...');
   const filePath = './tests/storage.state.json';
 
