@@ -38,6 +38,7 @@ export default defineConfig({
       name: 'chromium',
       testIgnore: 'specs/api.spec.ts',
       use: { ...devices['Desktop Chrome'] },
+      dependencies: ['api-tests'],
     },
 
     {
