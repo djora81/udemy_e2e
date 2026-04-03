@@ -47,6 +47,12 @@ export default defineConfig({
       use: {
         baseURL: process.env.API_BASE_URL,
       },
+      teardown: 'cleanup',
+    },
+
+    {
+      name: 'cleanup',
+      testMatch: /global\.teardown\.ts/,
     },
 
     // {
