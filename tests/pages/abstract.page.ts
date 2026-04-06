@@ -9,6 +9,14 @@ export class AbstractPage {
     await this.page.goto(url);
     await this.page.waitForLoadState('networkidle');
   }
+
+  async verifyVisualSnapshot(snapshotName: string, options = {}) {
+    await expect(this.page).toHaveScreenshot(snapshotName, {
+      fullPage: true,
+      animations: 'disabled',
+      ...options
+    });
+  }
 };
 
 // exports.AbstractPage = class AbstractPage {
