@@ -34,8 +34,8 @@ test('Select product from catalog', async ({ page }) => {
   const catalogPage = new CatalogPage(page);
   const registrationPage = new RegistrationPage(page);
   const registrationBuilder = new RegistrationBuilder();
-  const addToBasketText = 'Add to Basket';
-  const removeFromBasketText = 'Remove from Basket';
+  const addToBasketText = 'Add to Cart';
+  const removeFromBasketText = 'Remove from Cart';
 
   const user = new RegistrationBuilder()
     .withEmail(email)

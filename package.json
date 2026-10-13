@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/djora81/udemy_e2e#readme",
   "devDependencies": {
-    "@faker-js/faker": "^10.4.0",
-    "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.3",
-    "dotenv": "^17.4.2"
+    "@faker-js/faker": "^10.6.0",
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5",
+    "dotenv": "^18.0.7"
   }
 }
