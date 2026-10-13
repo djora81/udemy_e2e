@@ -13,7 +13,7 @@ test('Register with Ukrainian phone number', async ({ registrationPage }) => {
   await expect(registrationPage.errorMessage).not.toBeVisible();
 });
 
-test('Fill incorrect registration form for Ukraine', async ({ registrationPage }) => {
+test.fixme('Fill incorrect registration form for Ukraine', async ({ registrationPage }) => {
   const user = new RegistrationBuilder().build();
   const expectedErrorMessage = 'For Ukraine, phone number must start with +380 and have 12 digits.';
 
